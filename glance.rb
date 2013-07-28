@@ -1,6 +1,7 @@
 require 'sinatra'
 require_relative 'api/weather'
 require_relative 'api/tube'
+require_relative 'api/news'
 
 ENV['RACK_ENV'] ||= 'development'
 
@@ -13,5 +14,6 @@ class Glance < Sinatra::Base
 
   use WeatherApi
   use TubeApi
+  use NewsApi
 
 end
