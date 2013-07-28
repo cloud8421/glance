@@ -9,7 +9,11 @@ class Glance < Sinatra::Base
 
   configure do
     set :root, File.dirname(__FILE__)
-    set :public_folder, File.join(root, 'app')
+    if ENV['RACK_ENV'] == 'development'
+      set :public_folder, File.join(root, 'app')
+    else
+      set :public_folder, File.join(root, 'dist')
+    end
   end
 
   use WeatherApi
