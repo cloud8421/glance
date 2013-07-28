@@ -18,30 +18,88 @@
         <!-- endbuild -->
     </head>
     <body>
-        <div class="container">
-            <div class="hero-unit">
-                <h1>'Allo, 'Allo!</h1>
-                <p>You now have</p>
-                <ul>
-                    <li>HTML5 Boilerplate</li>
-                    <li>RequireJS</li>
-                </ul>
-                <p>installed.</p>
-                <h3>Enjoy coding! - Yeoman</h3>
-            </div>
+
+        <div id="main">
+          <section id="today" class="widget">
+            <h1 data-text="date.today">Today's date</h1>
+            <section id="weather">
+              <ul class="toggle">
+                <li data-toggle="weather-home" class="selected">Home</li><!--
+                --><li data-toggle="weather-work">Work</li>
+              </ul>
+              <section class="tabs" id="weather-home" data-target="weather-canvas-home" data-type="home">
+                <canvas id="weather-canvas-home" width="100" height="100"></canvas>
+                <div class="details">
+                  <h5 data-text="engine.summary"></h5>
+                  <h6 data-text="engine.temperature | celsius"></h6>
+                </div>
+                <dl>
+                  <dt>In a few minutes:</dt>
+                  <dd data-text="engine.minutely"></dd>
+                  <dt>Later on:</dt>
+                  <dd data-text="engine.hourly"></dd>
+                </dl>
+              </section>
+              <section class="tabs" id="weather-work" data-target="weather-canvas-work" data-type="work">
+                <canvas id="weather-canvas-work" width="100" height="100"></canvas>
+                <div class="details">
+                  <h5 data-text="engine.summary"></h5>
+                  <h6 data-text="engine.temperature | celsius"></h6>
+                </div>
+                <dl>
+                  <dt>In a few minutes:</dt>
+                  <dd data-text="engine.minutely"></dd>
+                  <dt>Later on:</dt>
+                  <dd data-text="engine.hourly"></dd>
+                </dl>
+              </section>
+            </section>
+          </section>
+          <section id="tube" class="widget">
+            <ul class="toggle">
+              <li data-toggle="tube-status" class="selected">Status</li><!--
+              --><li data-toggle="tube-weekend">Weekend</li>
+            </ul>
+            <section id="tube-status" class="tabs">
+              <ul class="lines">
+                <li data-data-id="item.id" data-class="item.name | parameterize">
+                  <h6 data-text="item.name" data-class="item.cssClass"></h6>
+                  <p data-text="item.status"></p>
+                </li>
+              </ul>
+            </section>
+            <section id="tube-weekend" class="tabs">
+              <ul class="lines">
+                <li data-data-id="item.id" data-class="item.name | parameterize | normalize">
+                  <h6 data-text="item.name | normalize" data-class="item.shortStatus | parameterize"></h6>
+                  <p data-text="item.status"></p>
+                </li>
+              </ul>
+            </section>
+          </section>
+          <section id="news" class="widget">
+            <ul class="toggle">
+              <li data-toggle="news-uk" class="selected">UK</li><!--
+              --><li data-toggle="news-ita">Italy</li>
+            </ul>
+            <section id="news-uk" class="tabs">
+              <ul class="news">
+                <li>
+                  <span data-text="item.webPublicationDate | toSimpleDate" class="date"></span>
+                  <a href="#" data-text="item.webTitle" data-href="item.webUrl" target="_blank"></a>
+                </li>
+              </ul>
+            </section>
+            <section id="news-ita" class="tabs">
+              <ul class="news">
+                <li>
+                  <span data-text="item.webPublicationDate | toSimpleDate" class="date"></span>
+                  <a href="#" data-text="item.webTitle" data-href="item.webUrl" target="_blank"></a>
+                </li>
+              </ul>
+            </section>
+          </section>
         </div>
-
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src='//www.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
 
         <!-- build:js scripts/main.js -->
         <script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>

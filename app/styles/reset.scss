@@ -1,0 +1,32 @@
+* {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  -webkit-padding-start: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100%;
+  width: 100%;
+  font-size: 90%;
+  line-height: 1.55em;
+  -webkit-font-smoothing: antialiased;
+}
+@media screen and (min-width: 700px) {
+  body {
+    font-size: 100%;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  body {
+    font-size: 112.5%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 125%;
+  }
+}
