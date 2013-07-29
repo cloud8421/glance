@@ -1,4 +1,5 @@
 define(['underscore', 'backbone'], function (_, Backbone) {
+  'use strict';
 
   var News = Backbone.Model.extend({
 

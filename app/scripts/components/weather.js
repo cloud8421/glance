@@ -9,10 +9,9 @@ define([
     WeatherWidget,
     WithTabs
   ) {
+    'use strict';
 
-    return defineComponent(Weather, WithTabs);
-
-    function Weather() {
+    function Weather () {
 
       function attachWidgetToElement() {
         var targetId = '#' + this.id;
@@ -27,5 +26,7 @@ define([
       });
 
     }
+
+    return defineComponent(Weather, WithTabs);
 
   });

@@ -30,6 +30,7 @@ require([
     Tube,
     News
   ) {
+    'use strict';
     Title.attachTo('#today h1');
     Weather.attachTo('#weather');
     Tube.attachTo('#tube');

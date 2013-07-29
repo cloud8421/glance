@@ -1,25 +1,26 @@
 define([
     'jquery',
-    'skycons',
+    // 'skycons',
     'config/rivets',
     '../../../bower_components/flight/lib/component',
     'engines/weather'
   ], function (
     $,
-    Skycons,
+    // Skycons,
     rivets,
     defineComponent,
     WeatherEngine
   ) {
+    'use strict';
 
     return defineComponent(WeatherWidget);
 
     function WeatherWidget() {
       this.after('initialize', function () {
-        var skycons = new Skycons({"color": "white"});
+        // var skycons = new Skycons({"color": "white"});
         var weatherEngine = new WeatherEngine({
-          type: this.attr.type,
-          skycons: skycons
+          type: this.attr.type
+          // skycons: skycons
         });
         rivets.bind(this.$node, { engine: weatherEngine });
         // manual update of the icon.

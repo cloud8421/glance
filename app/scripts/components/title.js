@@ -11,8 +11,7 @@ define([
     rivets,
     defineComponent
   ) {
-
-    return defineComponent(title);
+    'use strict';
 
     function currentDate() {
       var dateFormat = 'MMMM Do YYYY, HH:mm:ss';
@@ -32,9 +31,9 @@ define([
       this.after('initialize', function () {
         rivets.bind(this.$node, {date: date});
         var clock = setInterval(update, 1000, date);
-        $(document).on('webkitvisibilitychange', function (event) {
+        $(document).on('webkitvisibilitychange', function () {
           var state = document.webkitVisibilityState;
-          if (state == 'visible') {
+          if (state === 'visible') {
             clock = setInterval(update, 1000, date);
           } else {
             clearInterval(clock);
@@ -42,5 +41,7 @@ define([
         });
       });
     }
+
+    return defineComponent(title);
 
   });

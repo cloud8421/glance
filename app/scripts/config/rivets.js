@@ -1,4 +1,5 @@
-define(['rivets'], function (rivets) {
+define(['rivets', 'moment'], function (rivets, moment) {
+  'use strict';
   rivets.configure({
     adapter: {
       subscribe: function(obj, keypath, callback) {
@@ -33,7 +34,7 @@ define(['rivets'], function (rivets) {
   rivets.formatters.toSimpleDate = function (value) {
     var dateFormat = 'MMMM Do, HH:mm';
     return moment(value).format(dateFormat);
-  }
+  };
 
   return rivets;
 });

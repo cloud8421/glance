@@ -9,8 +9,7 @@ define([
     News,
     WithTabs
   ) {
-
-    return defineComponent(news, WithTabs);
+    'use strict';
 
     function news() {
 
@@ -36,5 +35,7 @@ define([
         itaNewsEngine.fetch();
       });
     }
+
+    return defineComponent(news, WithTabs);
 
   });

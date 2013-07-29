@@ -11,10 +11,9 @@ define([
     CollectionView,
     WithTabs
   ) {
+    'use strict';
 
-    return defineComponent(tube, WithTabs);
-
-    function tube() {
+    function tube () {
 
       this.defaultAttrs({
         statusContainer: '#tube-status .lines',
@@ -34,5 +33,7 @@ define([
         tubeWeekendEngine.fetch();
       });
     }
+
+    return defineComponent(tube, WithTabs);
 
   });

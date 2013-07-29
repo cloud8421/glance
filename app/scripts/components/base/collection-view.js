@@ -5,8 +5,7 @@ define([
     defineComponent,
     rivets
   ) {
-
-    return defineComponent(collectionView);
+    'use strict';
 
     function render(component, collection) {
       collection.on('sync', function () {
@@ -44,5 +43,7 @@ define([
         });
       });
     }
+
+    return defineComponent(collectionView);
 
   });
