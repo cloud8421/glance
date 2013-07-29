@@ -20,4 +20,8 @@ class Glance < Sinatra::Base
   use TubeApi
   use NewsApi
 
+  get "/" do
+    File.read [settings.public_folder, 'index.html'].join('/')
+  end
+
 end
