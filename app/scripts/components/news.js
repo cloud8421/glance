@@ -2,12 +2,14 @@ define([
     '../../bower_components/flight/lib/component',
     'engines/news',
     'components/base/collection-view',
-    'mixins/tabs'
+    'mixins/tabs',
+    'mixins/reload'
   ], function (
     defineComponent,
     NewsEngine,
     News,
-    WithTabs
+    WithTabs,
+    WithReload
   ) {
     'use strict';
 
@@ -18,24 +20,28 @@ define([
         itaNews: '#news-ita .news'
       });
 
+      this.reload = function() {
+        this.ukNewsEngine.fetch();
+        this.itaNewsEngine.fetch();
+      };
+
       this.after('initialize', function () {
-        var ukNewsEngine = new NewsEngine({
+        this.ukNewsEngine = new NewsEngine({
           type: 'uk'
         });
-        var itaNewsEngine = new NewsEngine({
+        this.itaNewsEngine = new NewsEngine({
           type: 'ita'
         });
         News.attachTo(this.select('ukNews'), {
-          engine: ukNewsEngine
+          engine: this.ukNewsEngine
         });
         News.attachTo(this.select('itaNews'), {
-          engine: itaNewsEngine
+          engine: this.itaNewsEngine
         });
-        ukNewsEngine.fetch();
-        itaNewsEngine.fetch();
+        this.reload();
       });
     }
 
-    return defineComponent(news, WithTabs);
+    return defineComponent(news, WithTabs, WithReload);
 
   });
