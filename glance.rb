@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'rack/cache'
 require_relative 'api/weather'
 require_relative 'api/tube'
 require_relative 'api/news'

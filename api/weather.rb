@@ -6,6 +6,7 @@ ForecastIO.configure do |configuration|
 end
 
 class WeatherApi < Sinatra::Base
+  use Rack::Cache
 
   before do
     content_type :json

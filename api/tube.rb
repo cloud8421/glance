@@ -37,6 +37,8 @@ module TubeWeekend
 end
 
 class TubeApi < Sinatra::Base
+  use Rack::Cache
+
   before do
     content_type :json
   end
