@@ -27,7 +27,7 @@ class NewsApi < Sinatra::Base
   end
 
   get '/news/uk.json' do
-    News.fetch('uk')
+    News.fetch('uk-news')
   end
 
   get '/news/ita.json' do

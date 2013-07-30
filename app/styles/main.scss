@@ -65,6 +65,7 @@ header {
 .widget {
   @include span-columns(4);
   text-align: center;
+  position: relative;
 
   h1 {
     text-align: center;
@@ -120,8 +121,27 @@ header {
         color: $default-text-colour-inverted;
       }
     }
+  }
+
+  footer {
+    position: absolute;
+    right: 0.9em;
+    bottom: 0.7em;
+
+    .reload {
+      cursor: pointer;
+      display: inline-block;
+      padding: 0.1em;
+      border-radius: 0.5em;
+      line-height: 1em;
+      font-weight: bold;
+      &:hover {
+        background-color: lighten($default-widget-bg-colour, 10%);
+      }
+    }
 
   }
+
 }
 
 #weather {
@@ -162,7 +182,7 @@ header {
       clear: both;
 
       dt, dd {
-        display: inline-block;
+        display: block;
       }
 
     }

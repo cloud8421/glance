@@ -9,8 +9,16 @@ define(['backbone'], function (Backbone) {
 
     parse: function (response) {
       var customResponse = response.currently;
-      customResponse.hourly = response.hourly.summary;
-      customResponse.minutely = response.minutely.summary;
+      if (!!response.hourly) {
+        customResponse.hourly = response.hourly.summary;
+      } else {
+        customResponse.hourly = 'N/A';
+      }
+      if (!!response.minutely) {
+        customResponse.minutely = response.minutely.summary;
+      } else {
+        customResponse.minutely = 'N/A';
+      }
       return customResponse;
     }
 
