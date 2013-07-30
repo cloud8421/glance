@@ -3,13 +3,15 @@ define([
     'engines/tube',
     'engines/tube-weekend',
     'components/base/collection-view',
-    'mixins/tabs'
+    'mixins/tabs',
+    'mixins/reload'
   ], function (
     defineComponent,
     TubeEngine,
     TubeWeekendEngine,
     CollectionView,
-    WithTabs
+    WithTabs,
+    WithReload
   ) {
     'use strict';
 
@@ -20,20 +22,24 @@ define([
         weekendContainer: '#tube-weekend .lines'
       });
 
+      this.reload = function () {
+        this.tubeEngine.fetch();
+        this.tubeWeekendEngine.fetch();
+      };
+
       this.after('initialize', function () {
-        var tubeEngine = new TubeEngine();
-        var tubeWeekendEngine = new TubeWeekendEngine();
+        this.tubeEngine = new TubeEngine();
+        this.tubeWeekendEngine = new TubeWeekendEngine();
         CollectionView.attachTo(this.select('statusContainer'), {
-          engine: tubeEngine
+          engine: this.tubeEngine
         });
         CollectionView.attachTo(this.select('weekendContainer'), {
-          engine: tubeWeekendEngine
+          engine: this.tubeWeekendEngine
         });
-        tubeEngine.fetch();
-        tubeWeekendEngine.fetch();
+        this.reload();
       });
     }
 
-    return defineComponent(tube, WithTabs);
+    return defineComponent(tube, WithTabs, WithReload);
 
   });
