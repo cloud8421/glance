@@ -9,6 +9,7 @@ class WeatherApi < Sinatra::Base
 
   before do
     content_type :json
+    expires 60, :public, :must_revalidate
   end
 
   get '/weather/work.json' do

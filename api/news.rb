@@ -21,6 +21,7 @@ end
 class NewsApi < Sinatra::Base
   before do
     content_type :json
+    expires 1800, :public, :must_revalidate
   end
 
   get '/news/uk.json' do

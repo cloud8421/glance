@@ -42,10 +42,12 @@ class TubeApi < Sinatra::Base
   end
 
   get '/tube/status.json' do
+    expires 60, :public, :must_revalidate
     TubeStatus.fetch.to_json
   end
 
   get '/tube/weekend.json' do
+    expires 3600, :public, :must_revalidate
     TubeWeekend.fetch.to_json
   end
 end
