@@ -2,6 +2,7 @@
 @import 'reset';
 @import 'bourbon/bourbon';
 @import 'neat/neat';
+@import 'climacons';
 
 $default-font: 'Lato', Helvetica Neue;
 $default-text-colour: #FFF;
@@ -24,6 +25,15 @@ $default-widget-bg-colour: lighten($default-widget-accent-colour, 10%);
 
 @mixin default-border-radius {
   border-radius: 4px;
+}
+
+@include keyframes(rotating) {
+  from {
+    @include transform(rotate(0deg));
+  }
+  to {
+    @include transform(rotate(360deg));
+  }
 }
 
 body {
@@ -138,6 +148,9 @@ header {
       &:hover {
         background-color: lighten($default-widget-bg-colour, 10%);
       }
+      &.loading {
+        @include animation(rotating 2s linear infinite reverse);
+      }
     }
 
   }
@@ -173,8 +186,9 @@ header {
       font-weight: 900;
     }
 
-    canvas {
+    span.climacon {
       float: left;
+      font-size: 10em;
     }
 
     dl {

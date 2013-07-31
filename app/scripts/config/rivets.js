@@ -36,5 +36,21 @@ define(['rivets', 'moment'], function (rivets, moment) {
     return moment(value).format(dateFormat);
   };
 
+  rivets.formatters.toClimacon = function (value) {
+    var state = {
+      'clear-day': 'sun',
+      'clear-night': 'moon',
+      'rain': 'rain sun',
+      'snow': 'flurries',
+      'sleet': 'hail',
+      'wind': 'wind',
+      'fog': 'haze',
+      'cloudy': 'cloud',
+      'partly-cloudy-day': 'cloud sun',
+      'partly-cloudy-night': 'cloud moon'
+    }[value];
+    return "climacon " + state;
+  };
+
   return rivets;
 });
