@@ -49,7 +49,7 @@ define(['rivets', 'moment'], function (rivets, moment) {
       'partly-cloudy-day': 'cloud sun',
       'partly-cloudy-night': 'cloud moon'
     }[value];
-    return "climacon " + state;
+    return 'climacon ' + state;
   };
 
   return rivets;
