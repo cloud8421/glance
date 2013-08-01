@@ -168,7 +168,7 @@ header {
     background-color: $default-widget-bg-colour;
 
     .details {
-      margin-left: 6em;
+      margin: 0.8em 6em 0 0;
       text-align: left;
     }
 
@@ -188,7 +188,8 @@ header {
 
     span.climacon {
       float: left;
-      font-size: 10em;
+      font-size: 7em;
+      margin-right: 0.2em;
     }
 
     dl {
