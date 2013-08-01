@@ -6,11 +6,10 @@
 
 $default-font: 'Lato', Helvetica Neue;
 $default-text-colour: #FFF;
+$default-text-colour-inverted: #FFF;
 $default-link-colour: #edc233;
 $base-tint: #34495E;
-$default-text-colour-inverted: #FFF;
 $default-bg-colour: lighten($base-tint, 50%);
-$default-shadow-colour: #CCC;
 $default-widget-accent-colour: $base-tint;
 $default-widget-bg-colour: lighten($default-widget-accent-colour, 10%);
 $default-border-radius: 4px;
