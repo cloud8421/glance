@@ -13,19 +13,7 @@ $default-bg-colour: lighten($base-tint, 50%);
 $default-shadow-colour: #CCC;
 $default-widget-accent-colour: $base-tint;
 $default-widget-bg-colour: lighten($default-widget-accent-colour, 10%);
-
-@mixin default-text {
-  font-family: $default-font;
-  color: $default-text-colour;
-}
-
-@mixin default-text-shadow {
-  text-shadow: 2px 1px 1px $default-shadow-colour;
-}
-
-@mixin default-border-radius {
-  border-radius: 4px;
-}
+$default-border-radius: 4px;
 
 @include keyframes(rotating) {
   from {
@@ -37,7 +25,8 @@ $default-widget-bg-colour: lighten($default-widget-accent-colour, 10%);
 }
 
 body {
-  @include default-text;
+  font-family: $default-font;
+  color: $default-text-colour;
   background-color: darken($default-bg-colour, 10%);
   padding: 1em;
   height: 100%;
@@ -46,7 +35,7 @@ body {
 
 #main {
   @include outer-container;
-  @include default-border-radius;
+  border-radius: $default-border-radius;
   background-color: darken($default-bg-colour, 20%);
   padding: 1em;
   height: 100%;
@@ -68,7 +57,7 @@ header {
     border: 10px solid $default-widget-accent-colour;
     box-shadow: inset 0 0 2px darken($base-tint, 30%);
     color: white;
-    @include default-border-radius;
+    border-radius: $default-border-radius;
   }
 }
 
@@ -83,7 +72,7 @@ header {
   }
 
   .tabs {
-    @include default-border-radius;
+    border-radius: $default-border-radius;
     background-color: $default-widget-bg-colour;
     border: 10px solid $default-widget-accent-colour;
     box-shadow: inset 0 0 2px darken($base-tint, 30%);
