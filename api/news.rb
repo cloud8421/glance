@@ -8,6 +8,7 @@ module News
     connection.get do |req|
       req.params["format"] = 'json'
       req.params["section"] = section
+      req.params["api-key"]= = ENV['NEWS_API_KEY']
     end.body
   end
 
