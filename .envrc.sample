@@ -1,0 +1,4 @@
+export FORECAST_IO_API_KEY=your-api-key
+export TUBE_USER=email@example.com
+export TUBE_FEED_ID=999
+export NEWS_API_KEY=your-api-key
