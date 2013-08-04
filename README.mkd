@@ -1,0 +1,63 @@
+# At a Glance
+
+This is a personal dashboard, in a similar fashion as
+[Dashing](http://shopify.github.io/dashing/), and a good excuse to experiment
+with patterns, libraries and interesting tech.
+
+See a demo at <http://ataglance.herokuapp.com>.
+
+## What's included
+
+Current Tube Status, weekend planned closures, weather in 2 locations (with
+[Forecast.io](http://forecast.io), Guardian news for UK and Italy.
+
+## How it works
+
+A small sinatra backend proxies all calls to the different APIs (mostly to avoid
+exposing the needed API keys) and sends back json responses. Client side is a
+fat Frankestein monster that (at the moment) includes:
+
+- Require.js
+- Twitter Flight
+- jQuery
+- Backbone
+- Rivets.js
+- Ractive.js
+
+Ideally, the goal is to remove Backbone and Rivets to use Ractive only.
+
+## How it's tested
+
+Tests are being written.
+
+## Development Setup
+
+It requires [Yeoman](http://yeoman.io/) - here are the [installation
+instructions](https://github.com/yeoman/yeoman/wiki/Getting-Started).
+
+Once Yeoman is installed, we need to:
+
+    $ bundle
+    $ npm install
+    $ bower install
+
+The app requires the following environment variables:
+
+    FORECAST_IO_API_KEY
+    TUBE_USER
+    TUBE_FEED_ID
+    NEWS_API_KEY
+
+Please follow the instructions on the relevant api providers sites to obtain
+them.
+
+If you're using [direnv](http://direnv.net/), the project provides a
+`.envrc.sample` file you can customize and rename.
+
+After finishing setup env variables, you can run `bundle exec shotgun` to spin
+up the server. You will also need to run `grunt server` to handle client side
+compile.
+
+When ready to deploy, run `grunt`. This will create a `dist` directory with
+production files. You should then switch to the production branch, commit the
+dist changes and deploy that branch.
