@@ -167,8 +167,12 @@ header {
     }
 
     h6 {
-      font-size: 2em;
+      font-size: 10em;
       font-weight: 900;
+      position: absolute;
+      right: 0.1em;
+      bottom: 0.15em;
+      color: rgba(255,255,255,0.4);
     }
 
     span.climacon {
