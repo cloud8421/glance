@@ -27,37 +27,37 @@
 
         <div id="main">
           <section id="today" class="widget">
-            <h1 data-text="date.today">Today's date</h1>
+            <h1>{ date:today }</h1>
             <section id="weather">
               <ul class="toggle">
                 <li data-toggle="weather-home" class="selected">Home</li><!--
                 --><li data-toggle="weather-work">Work</li>
               </ul>
               <section class="tabs" id="weather-home" data-target="weather-canvas-home" data-type="home">
-                <span class="climacon" data-class="engine.icon | toClimacon"></span>
+                <span class="climacon" rv-class="engine:icon | toClimacon"></span>
                 <div class="details">
-                  <h5 data-text="engine.summary"></h5>
-                  <h6 data-text="engine.temperature | celsius"></h6>
+                  <h5>{ engine:summary }</h5>
+                  <h6>{ engine:temperature | celsius }</h6>
                 </div>
                 <dl>
                   <dt>In a few minutes:</dt>
-                  <dd data-text="engine.minutely"></dd>
+                  <dd>{ engine:minutely }</dd>
                   <dt>Later on:</dt>
-                  <dd data-text="engine.hourly"></dd>
+                  <dd>{ engine:hourly }</dd>
                 </dl>
                 <footer><span class="reload">&#8634;</span></footer>
               </section>
               <section class="tabs" id="weather-work" data-target="weather-canvas-work" data-type="work">
-                <span class="climacon" data-class="engine.icon | toClimacon"></span>
+                <span class="climacon" rv-class="engine:icon | toClimacon"></span>
                 <div class="details">
-                  <h5 data-text="engine.summary"></h5>
-                  <h6 data-text="engine.temperature | celsius"></h6>
+                  <h5>{ engine:summary }</h5>
+                  <h6>{ engine:temperature | celsius }</h6>
                 </div>
                 <dl>
                   <dt>In a few minutes:</dt>
-                  <dd data-text="engine.minutely"></dd>
+                  <dd>{ engine:minutely }</dd>
                   <dt>Later on:</dt>
-                  <dd data-text="engine.hourly"></dd>
+                  <dd>{ engine:hourly }</dd>
                 </dl>
                 <footer><span class="reload">&#8634;</span></footer>
               </section>
@@ -70,18 +70,18 @@
             </ul>
             <section id="tube-status" class="tabs">
               <ul class="lines">
-                <li data-data-id="item.id" data-class="item.name | parameterize">
-                  <h6 data-text="item.name" data-class="item.cssClass"></h6>
-                  <p data-text="item.status"></p>
+                <li rv-data-id="item:id" rv-class="item:name | parameterize">
+                  <h6 rv-class="item:cssClass">{ item:name }</h6>
+                  <p>{ item:status }</p>
                 </li>
               </ul>
               <footer><span class="reload">&#8634;</span></footer>
             </section>
             <section id="tube-weekend" class="tabs">
               <ul class="lines">
-                <li data-data-id="item.id" data-class="item.name | parameterize | normalize">
-                  <h6 data-text="item.name | normalize" data-class="item.shortStatus | parameterize"></h6>
-                  <p data-text="item.status"></p>
+                <li rv-data-id="item:id" rv-class="item:name | parameterize | normalize">
+                  <h6 rv-class="item:shortStatus | parameterize">{ item:name | normalize }</h6>
+                  <p>{ item:status | normalize }</p>
                 </li>
               </ul>
               <footer><span class="reload">&#8634;</span></footer>
@@ -95,16 +95,16 @@
             <section id="news-uk" class="tabs">
               <ul class="news">
                 <li>
-                  <span data-text="item.webPublicationDate | toSimpleDate" class="date"></span>
-                  <a href="#" data-text="item.webTitle" data-href="item.webUrl" target="_blank"></a>
+                  <span class="date">{ item:webPublicationDate | toSimpleDate }</span>
+                  <a href="#" rv-href="item:webUrl" target="_blank">{ item:webTitle }</a>
                 </li>
               </ul>
             </section>
             <section id="news-ita" class="tabs">
               <ul class="news">
                 <li>
-                  <span data-text="item.webPublicationDate | toSimpleDate" class="date"></span>
-                  <a href="#" data-text="item.webTitle" data-href="item.webUrl" target="_blank"></a>
+                  <span class="date">{ item:webPublicationDate | toSimpleDate }</span>
+                  <a href="#" rv-href="item:webUrl" target="_blank">{ item:webTitle }</a>
                 </li>
               </ul>
             </section>
