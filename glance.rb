@@ -25,4 +25,9 @@ class Glance < Sinatra::Base
     File.read [settings.public_folder, 'index.html'].join('/')
   end
 
+  get "/heartbeat" do
+    content_type :json
+    { status: :ok }.to_json
+  end
+
 end
