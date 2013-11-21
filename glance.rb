@@ -6,6 +6,8 @@ require_relative 'api/news'
 
 ENV['RACK_ENV'] ||= 'development'
 
+require 'newrelic_rpm' if ENV['RACK_ENV'] == 'production'
+
 class Glance < Sinatra::Base
 
   configure do
