@@ -19,6 +19,7 @@ GEM
     minitest (4.7.5)
     multi_json (1.7.7)
     multipart-post (1.2.0)
+    newrelic_rpm (3.6.6.147)
     rack (1.5.2)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -42,6 +43,7 @@ DEPENDENCIES
   activesupport (~> 4.0.0)
   faraday
   forecast_io
+  newrelic_rpm
   rack-cache
   shotgun
   sinatra

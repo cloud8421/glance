@@ -8,3 +8,5 @@ gem 'rack-cache'
 gem 'forecast_io'
 
 gem 'shotgun', group: :development
+
+gem 'newrelic_rpm', group: :production
