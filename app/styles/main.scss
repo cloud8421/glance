@@ -43,7 +43,6 @@ header {
 }
 
 #today {
-  @include span-columns(4);
   margin-top: 1.26em;
 
   h1 {
@@ -199,8 +198,6 @@ header {
   $lines: bakerloo, central, circle, district, hammersmith-and-city, jubilee, metropolitan, northern, piccadilly, victoria, waterloo-and-city, overground, dlr;
   $line-colors: #a66529, #d44535, #f5d143, #306b29, #dea0aa, #696e72, #804068, #000000, #1e60a4, #38a0dd, #80c0cc, #ea782f, #4eb5b2;
 
-  @include span-columns(4);
-
   #tube-weekend {
     display: none;
   }
@@ -302,4 +299,10 @@ header {
 
 }
 
-
+@media screen and (max-width: 450px) {
+  .widget {
+    float: none;
+    width: 100%;
+    margin-bottom: 0.67em;
+  }
+}
