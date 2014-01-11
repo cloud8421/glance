@@ -24,11 +24,11 @@ class WeatherApi < Sinatra::Base
   private
 
   def home_coordinates
-    OpenStruct.new(lat: 51.608649, long: -0.11924)
+    OpenStruct.new(lat: 51.58369, long: -0.11676)
   end
 
   def work_coordinates
-    OpenStruct.new(lat: 51.608516, long: -0.123693)
+    OpenStruct.new(lat: 51.519654, long: -0.098996)
   end
 
 end
